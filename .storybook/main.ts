@@ -2,22 +2,29 @@ import { dirname, join } from 'path'
 import { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
+  stories: ['../src/**/*.stories.@(ts|tsx)'],
   addons: [
     getAbsolutePath('@storybook/addon-links'),
-    getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-interactions'),
+    '@chromatic-com/storybook',
   ],
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
+  // features: {
+  //   storyStoreV7: true,
+  // },
   docs: {
     autodocs: true,
   },
   viteFinal: config => {
     config.build = config.build || {}
     config.build.sourcemap = false
+    config.optimizeDeps = {
+      include: ['**/*.js', '**/*.ts', '**/*.tsx'],
+    }
     return config
   },
 }

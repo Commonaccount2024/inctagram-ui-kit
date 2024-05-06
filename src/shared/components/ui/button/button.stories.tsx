@@ -1,16 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Button } from './'
+import { Button } from './button'
 
 const meta = {
   argTypes: {
-    onClick: { action: 'clicked' },
     variant: {
       control: { type: 'radio' },
-      options: ['primary', 'secondary', 'tertiary', 'link'],
+      options: ['primary', 'secondary'],
     },
   },
   component: Button,
+  parameters: {
+    layout: 'centered',
+  },
   tags: ['autodocs'],
   title: 'Components/Button',
 } satisfies Meta<typeof Button>
@@ -33,20 +35,6 @@ export const Secondary: Story = {
     variant: 'secondary',
   },
 }
-export const Tertiary: Story = {
-  args: {
-    children: 'Tertiary Button',
-    disabled: false,
-    variant: 'tertiary',
-  },
-}
-export const Link: Story = {
-  args: {
-    children: 'Button that looks like a link',
-    disabled: false,
-    variant: 'link',
-  },
-}
 
 export const FullWidth: Story = {
   args: {
@@ -61,9 +49,6 @@ export const AsLink: Story = {
   args: {
     as: 'a',
     children: 'Link that looks like a button',
-    href: 'https://google.com',
-    rel: 'noopener noreferrer',
-    target: '_blank',
     variant: 'primary',
   },
 }
