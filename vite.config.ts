@@ -23,6 +23,6 @@ export default defineConfig({
     target: 'esnext',
   },
   optimizeDeps: {
-    exclude: ['DocsRenderer-K4EAMTCU-7MZTOVAS.js'],
+    exclude: ['@storybook/*'],
   },
 })
