@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { FlagRussiaIcon } from '../../../../assets/icons/flag-russia'
 import { Button } from './button'
 
 const meta = {
@@ -36,6 +37,22 @@ export const Secondary: Story = {
   },
 }
 
+export const Outline: Story = {
+  args: {
+    children: 'Outline Button',
+    disabled: false,
+    variant: 'outline',
+  },
+}
+
+export const TextButton: Story = {
+  args: {
+    children: 'Text Button',
+    disabled: false,
+    variant: 'text-button',
+  },
+}
+
 export const FullWidth: Story = {
   args: {
     children: 'Full Width Button',
@@ -50,5 +67,13 @@ export const AsLink: Story = {
     as: 'a',
     children: 'Link that looks like a button',
     variant: 'primary',
+  },
+}
+
+export const SecondaryWithIcon: Story = {
+  args: {
+    children: [<FlagRussiaIcon key={'secondary-logout-icon'} />, 'English'],
+    disabled: false,
+    variant: 'secondary-with-icon',
   },
 }

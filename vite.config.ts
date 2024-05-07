@@ -12,9 +12,6 @@ export default defineConfig({
       formats: ['es'],
       name: 'inctagram-ui-kit',
     },
-    // optimizeDeps: {
-    //   exclude: ['DocsRenderer-K4EAMTCU-3YTSISCG.js'],
-    // },
     rollupOptions: {
       external: [
         'react/jsx-runtime',
@@ -24,5 +21,8 @@ export default defineConfig({
     },
     sourcemap: true,
     target: 'esnext',
+  },
+  optimizeDeps: {
+    exclude: ['@storybook/*'],
   },
 })
