@@ -42,10 +42,10 @@ option {
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-family-primary), sans-serif;
+  font-family: var(--font-family-inter), sans-serif;
   line-height: var(--line-height-m);
 
-  color: var(--color-light-100);
+  color: var(--Light-100);
 }
 
 // To ensure that Input fields are not the default color when selecting from a list of previously entered values.
@@ -66,5 +66,5 @@ select:-webkit-autofill:focus {
   box-shadow: 0 0 0 1000px transparent inset;
   transition: background-color 50000000000s ease-in-out 0s;
 
-  -webkit-text-fill-color: var(--color-light-100);
+  -webkit-text-fill-color: var(--Light-100);
 }
