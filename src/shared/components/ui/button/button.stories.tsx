@@ -70,6 +70,7 @@ export const AsLink: Story = {
   },
 }
 
+// secondary with icon
 export const SecondaryWithIcon: Story = {
   args: {
     children: [<FlagRussiaIcon key={'secondary-logout-icon'} />, 'English'],
