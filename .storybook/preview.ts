@@ -10,6 +10,10 @@ const preview: Preview = {
           name: 'dark',
           value: 'var(--Dark-700)',
         },
+        {
+          name: 'light',
+          value: 'var(--Light-700)',
+        },
       ],
     },
     controls: {
