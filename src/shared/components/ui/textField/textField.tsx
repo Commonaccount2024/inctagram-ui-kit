@@ -14,6 +14,7 @@ import { CloseIcon } from '../../../../assets/icons/closeIcon'
 import { EyeIcon } from '../../../../assets/icons/eyeIcon'
 import { SearchIcon } from '../../../../assets/icons/searchIcon'
 import { Typography } from '../typography'
+import EyeClosedIcon from '../../../../assets/icons/eyeClosedIcon'
 
 export type TextFieldProps = {
   error?: string
@@ -43,7 +44,7 @@ export const TextField = forwardRef<ElementRef<'input'>, TextFieldProps>(
 
     const eyeButton = type === 'password' && (
       <button className={s.buttonIcon} onMouseDown={showPass} onMouseUp={showPass} type={'button'}>
-        <EyeIcon />
+        {show ? <EyeIcon /> : <EyeClosedIcon />}
       </button>
     )
 
