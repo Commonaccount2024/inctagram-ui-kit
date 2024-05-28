@@ -11,13 +11,13 @@ import { clsx } from 'clsx'
 
 import s from './card.module.scss'
 
+type CardComponent = <T extends ElementType = 'div'>(
+  props: { ref?: Ref<ElementRef<T>> } & CardProps<T>
+) => ReactNode
+
 export type CardProps<T extends ElementType> = {
   as?: T
 } & ComponentPropsWithoutRef<T>
-
-type CardComponent = <T extends ElementType = 'div'>(
-  props: CardProps<T> & { ref?: Ref<ElementRef<T>> }
-) => ReactNode
 
 export const Card: CardComponent = forwardRef(({ as, children, className, ...rest }, ref) => {
   const Component: ElementType = as ?? 'div'

@@ -11,6 +11,7 @@ import cx from 'clsx'
 import s from './textField.module.scss'
 
 import { CloseIcon } from '../../../../assets/icons/closeIcon'
+import { EyeClosedIcon } from '../../../../assets/icons/eyeClosedIcon'
 import { EyeIcon } from '../../../../assets/icons/eyeIcon'
 import { SearchIcon } from '../../../../assets/icons/searchIcon'
 import { Typography } from '../typography'
@@ -43,7 +44,7 @@ export const TextField = forwardRef<ElementRef<'input'>, TextFieldProps>(
 
     const eyeButton = type === 'password' && (
       <button className={s.buttonIcon} onMouseDown={showPass} onMouseUp={showPass} type={'button'}>
-        <EyeIcon />
+        {show ? <EyeIcon /> : <EyeClosedIcon />}
       </button>
     )
 

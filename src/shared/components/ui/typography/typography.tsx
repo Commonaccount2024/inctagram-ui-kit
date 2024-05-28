@@ -27,7 +27,7 @@ export type TextProps<T extends ElementType = 'p'> = {
 } & Omit<ComponentPropsWithoutRef<T>, 'className'>
 
 export const Typography = <T extends ElementType = 'p'>(
-  props: TextProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof TextProps<T>>
+  props: Omit<ComponentPropsWithoutRef<T>, keyof TextProps<T>> & TextProps<T>
 ) => {
   const { as: Component = 'p', children, className, variant = 'body1', ...restProps } = props
 
