@@ -25,7 +25,7 @@ export type TextFieldProps = {
 export const TextField = forwardRef<ElementRef<'input'>, TextFieldProps>(
   ({ children, error, label, onChange, onChangeValue, type = 'text', value, ...rest }, ref) => {
     const [show, setShow] = useState(false)
-    const showPass = () => setShow(!show)
+    const showPass = () => setShow(prev => (prev ? false : true))
 
     const isShowClearButton =
       type === 'search' && value !== undefined && value.toString().length > 0
